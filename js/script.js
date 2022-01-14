@@ -264,6 +264,28 @@ planea.rotation.set(-Math.PI/2,0,0)
 scene.add(planea);
 
 // image Loader
+// Mosanto
+
+var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+    map:THREE.ImageUtils.loadTexture('images/iron ox.jpg'),
+    tranparent: true,
+    side: THREE.DoubleSide
+});
+img.map.needsUpdate = true; //ADDED
+
+var plane = new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.5),img);
+plane.position.set(4,4.5,5)
+scene.add(plane);
+// var plane = new THREE.Mesh(new THREE.PlaneGeometry(1,0.5),img);
+// plane.position.set(-5,5.5,6.02)
+// scene.add(plane);
+
+var planea = new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.5),img);
+planea.position.set(4,4.5,5)
+planea.rotation.set(-Math.PI/2,0,0)
+scene.add(planea);
+
+// image Loader
 // Cargil
 
 var img2 = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
