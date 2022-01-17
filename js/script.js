@@ -6,24 +6,21 @@ const scene = new THREE.Scene()
 
 // GLTF Loader
 
-// var loader = new THREE.GLTFLoader();
-// var obj;
-// loader.load(
-// 	// resource URL
-// 	'cryptopyramidpp_.glb',
-// 	// called when the resource is loaded
-// 	    function ( gltf ) {
-//         obj = gltf.scene
-// 		scene.add( obj );
-//         obj.scale.set(0.6,0.65,0.6)
-//         obj.rotation.set(0.3,0.8,-0.2)
+var loader = new THREE.GLTFLoader();
+var obj;
+loader.load(
+	// resource URL
+	'Assets/cube.glb',
+	// called when the resource is loaded
+	    function ( gltf ) {
+        obj = gltf.scene
+		scene.add( obj );
+        obj.scale.set(4.3,4.3,4.3)
+        obj.rotation.set(0,0,0)
         
-//         mixer1 = new THREE.AnimationMixer(obj);
-// 	    console.log(gltf.animations)
-// 	    mixer1.clipAction( gltf.animations[0]).play();
-        
-//     }
-// );
+       
+    }
+);
 // const geometry = new THREE.BoxGeometry( 12,12,12 );
 // const material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
 // const cube = new THREE.Mesh( geometry, material );
@@ -32,8 +29,8 @@ const scene = new THREE.Scene()
 /// TEXT  ///
 
 var fontLoader = new THREE.FontLoader();
-fontLoader.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('INNOVATION', {
+fontLoader.load("opensans",function(tex){ 
+    var  textGeo = new THREE.TextGeometry('Innovation', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -51,7 +48,7 @@ fontLoader.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('SCIENTIFIC APPROACH', {
+    var  textGeo = new THREE.TextGeometry('Sientific Approach', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -69,7 +66,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('INNOVATION', {
+    var  textGeo = new THREE.TextGeometry('Innovation', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -87,7 +84,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('SUSTAINABILITY', {
+    var  textGeo = new THREE.TextGeometry('Sustainability', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -105,7 +102,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('ECO-FRIENDLY', {
+    var  textGeo = new THREE.TextGeometry('Eco-friendly', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -123,7 +120,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('NO BRAND AFFINITY', {
+    var  textGeo = new THREE.TextGeometry('No Brand Affinity', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -142,7 +139,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('PRODUCT QUALITY/', {
+    var  textGeo = new THREE.TextGeometry('Product Quality/', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -161,7 +158,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('BRAND LOVE', {
+    var  textGeo = new THREE.TextGeometry('Brand Love', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -180,7 +177,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('ECO-FRIENDLY', {
+    var  textGeo = new THREE.TextGeometry('Eco-friendly', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -199,7 +196,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('SUSTAINABILITY', {
+    var  textGeo = new THREE.TextGeometry('Sustainability', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -1086,9 +1083,57 @@ plane19a.position.set(-2.5,0,-0.2)
 plane19a.rotation.set(0,-Math.PI/2,0)
 scene.add(plane19a);
 
+// image Loader
+// Arable
+
+var img20 = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+    map:THREE.ImageUtils.loadTexture('images/Arable.jpg'),
+    tranparent: true,
+    side: THREE.DoubleSide
+});
+img20.map.needsUpdate = true; //ADDED
+
+var plane20 = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20.overdraw = false;
+plane20.position.set(-0.7,4,-3.5)
+scene.add(plane20);
+
+// var plane19 = new THREE.Mesh(new THREE.PlaneGeometry(1,0.5),img19);
+// plane19.overdraw = false;
+// plane19.position.set(-0.5,4,-4)
+// scene.add(plane19);
+
+var plane20a = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20a.overdraw = false;
+plane20a.position.set(-0.7,4.5,-4)
+plane20a.rotation.set(-Math.PI/2,0,0)
+scene.add(plane20a);
+var plane20a = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20a.overdraw = false;
+plane20a.position.set(-0.7,3.5,-4)
+plane20a.rotation.set(-Math.PI/2,0,0)
+scene.add(plane20a);
+var plane20a = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20a.overdraw = false;
+plane20a.position.set(-0.7,4,-4.5)
+plane20a.rotation.set(0,Math.PI,0)
+scene.add(plane20a);
+var plane20a = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20a.overdraw = false;
+plane20a.position.set(-0.2,4,-4)
+plane20a.rotation.set(0,Math.PI/2,0)
+scene.add(plane20a);
+var plane20a = new THREE.Mesh(new THREE.PlaneGeometry(1,1),img20);
+plane20a.overdraw = false;
+plane20a.position.set(-1.2,4,-4)
+plane20a.rotation.set(0,-Math.PI/2,0)
+scene.add(plane20a);
+
+
+
 
 // Lights
-const light = new THREE.AmbientLight( 0xfffffff,0.7); // soft white light
+const light = new THREE.AmbientLight( 0xfffffff,1); // soft white light
 scene.add( light );
 
 
