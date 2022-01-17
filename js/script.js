@@ -10,13 +10,15 @@ var loader = new THREE.GLTFLoader();
 var obj;
 loader.load(
 	// resource URL
-	'Assets/cube.glb',
+	'Assets/cube2.glb',
 	// called when the resource is loaded
 	    function ( gltf ) {
         obj = gltf.scene
 		scene.add( obj );
         obj.scale.set(4.3,4.3,4.3)
         obj.rotation.set(0,0,0)
+        obj.transparent = true
+        obj.alpha = 0.3
         
        
     }
@@ -29,7 +31,7 @@ loader.load(
 /// TEXT  ///
 
 var fontLoader = new THREE.FontLoader();
-fontLoader.load("opensans",function(tex){ 
+fontLoader.load("helvetiker_regular.typeface.json",function(tex){ 
     var  textGeo = new THREE.TextGeometry('Innovation', {
             size: 0.3,
             height: 0.3,
@@ -48,7 +50,7 @@ fontLoader.load("opensans",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('Sientific Approach', {
+    var  textGeo = new THREE.TextGeometry('Scientific Approach', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -102,7 +104,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('Eco-friendly', {
+    var  textGeo = new THREE.TextGeometry('Eco-unfriendly', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -177,7 +179,7 @@ fontLoader1.load("helvetiker_regular.typeface.json",function(tex){
 
 var fontLoader1 = new THREE.FontLoader();
 fontLoader1.load("helvetiker_regular.typeface.json",function(tex){ 
-    var  textGeo = new THREE.TextGeometry('Eco-friendly', {
+    var  textGeo = new THREE.TextGeometry('Eco-unfriendly', {
             size: 0.3,
             height: 0.3,
             curveSegments: 1,
@@ -1133,31 +1135,31 @@ scene.add(plane20a);
 
 
 // Lights
-const light = new THREE.AmbientLight( 0xfffffff,1); // soft white light
+const light = new THREE.AmbientLight( 0xfffffff,10); // soft white light
 scene.add( light );
 
 
 
-const pointLight2 = new THREE.PointLight(0xffffff,0.3)
-pointLight2.position.x = 10
+const pointLight2 = new THREE.PointLight(0xffffff,1000)
+pointLight2.position.x = 0
 pointLight2.position.y = 0
-pointLight2.position.z = 20
-const pointLight = new THREE.PointLight(0xffffff,0.3)
+pointLight2.position.z = 0
+const pointLight = new THREE.PointLight(0xffffff,1)
 pointLight.position.x = -10
 pointLight.position.y = 0
 pointLight.position.z = 20
 scene.add(pointLight)
-const pointLight3 = new THREE.PointLight(0xffffff,0.2)
+const pointLight3 = new THREE.PointLight(0xffffff,1)
 pointLight3.position.y = 0
 pointLight3.position.z = -10
 pointLight3.position.x = -10
 scene.add(pointLight3)
-const pointLight4 = new THREE.PointLight(0xffffff,0.2)
+const pointLight4 = new THREE.PointLight(0xffffff,1)
 pointLight4.position.y = -10
 pointLight4.position.z = 0
 pointLight4.position.x = 0
 scene.add(pointLight4)
-const pointLight5 = new THREE.PointLight(0xffffff,0.3)
+const pointLight5 = new THREE.PointLight(0xffffff,1)
 pointLight5.position.y = 20
 pointLight5.position.z = 0
 pointLight5.position.x = 0
