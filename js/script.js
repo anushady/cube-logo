@@ -4,29 +4,7 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-// GLTF Loader
 
-var loader = new THREE.GLTFLoader();
-var obj;
-loader.load(
-	// resource URL
-	'Assets/cube2.glb',
-	// called when the resource is loaded
-	    function ( gltf ) {
-        obj = gltf.scene
-		scene.add( obj );
-        obj.scale.set(4.3,4.3,4.3)
-        obj.rotation.set(0,0,0)
-        obj.transparent = true
-        obj.alpha = 0.3
-        
-       
-    }
-);
-// const geometry = new THREE.BoxGeometry( 12,12,12 );
-// const material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
 
 /// TEXT  ///
 
